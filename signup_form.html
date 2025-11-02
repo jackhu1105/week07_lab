@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>會員註冊</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>會員註冊表單</h1>
+    <form id="signupForm" novalidate>
+      
+      <label>
+        姓名：
+        <input type="text" id="name" name="name" required aria-describedby="err-name">
+      </label>
+      <p id="err-name" class="error"></p>
+
+      
+      <label>
+        Email:
+        <input type="email" id="email" name="email" required aria-describedby="err-email">
+      </label>
+      <p id="err-email" class="error"></p>
+
+      
+      <label>
+        手機：
+        <input type="tel" id="phone" name="phone" required pattern="\\d{10}" aria-describedby="err-phone">
+      </label>
+      <p id="err-phone" class="error"></p>
+
+      
+      <label>
+        密碼：
+        <input type="password" id="password" name="password" required minlength="8" aria-describedby="err-password strength-msg">
+      </label>
+      <div id="strength-bar"><span></span></div>
+      <p id="strength-msg" class="hint"></p>
+      <p id="err-password" class="error"></p>
+
+      
+      <label>
+        確認密碼：
+        <input type="password" id="confirmPassword" name="confirmPassword" required aria-describedby="err-confirm">
+      </label>
+      <p id="err-confirm" class="error"></p>
+
+      
+      <fieldset id="interests">
+        <legend>興趣（至少選 1)</legend>
+        <label><input type="checkbox" value="運動">運動</label>
+        <label><input type="checkbox" value="音樂">音樂</label>
+        <label><input type="checkbox" value="閱讀">閱讀</label>
+        <label><input type="checkbox" value="旅行">旅行</label>
+        <p id="err-interests" class="error"></p>
+      </fieldset>
+
+      
+      <label class="terms">
+        <input type="checkbox" id="terms" required aria-describedby="err-terms">
+        我已閱讀並同意服務條款
+      </label>
+      <p id="err-terms" class="error"></p>
+
+      <button type="submit" id="submitBtn">註冊</button>
+      <button type="reset" id="resetBtn">重設</button>
+      <p id="successMsg" class="success"></p>
+    </form>
+  </main>
+
+  <script src="signup_form.js"></script>
+</body>
+</html>
